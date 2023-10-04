@@ -2,6 +2,7 @@ import { SPage, SPageListProps } from 'servisofts-component';
 
 import root from './root';
 import carga from "./carga"
+import inicio from "./inicio"
 import login from "./login";
 import registro from './registro';
 import sql from './sql/index';
@@ -24,6 +25,7 @@ import viajar from "./viajar"
 export default SPage.combinePages("/", {
   "": carga,
   "root": root,
+  inicio,
   requisitos,
   wiki,
   ...login,

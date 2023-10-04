@@ -19,10 +19,12 @@
 import { SAssets } from 'servisofts-component';
 
 import Dhm from "./svg/dhm";
+import Transporte from "./svg/transporte";
 import calistenia from "./svg/calistenia"
 const Assets: SAssets = {
     svg: {
-        ...Dhm,
+        // ...Dhm,
+        ...Transporte,
         ...calistenia
 
     }
