@@ -4,10 +4,9 @@ import { SPage, SText } from 'servisofts-component';
 export default class index extends Component {
     render() {
         return (
-            <SPage title={'Que deceas hacer?'}>
-                <SText>{'Comprar pasaje'}</SText>
-                <SText>{'Pedir expreso'}</SText>
-                <SText>{'Enviar encomiendas'}</SText>
+            <SPage title={'A donde vas?'}>
+                <SText>{'Santa Cruz - Montero'}</SText>
+                <SText>{'Montero - Santa Cruz'}</SText>
             </SPage>
         );
     }

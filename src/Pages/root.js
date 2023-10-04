@@ -77,7 +77,7 @@ class index extends Component {
             <SView col={"xs-12"} center>
                 {/* <SText center fontSize={18}>BIENVENIDO AL SISTEMA ADMINISTRATIVO</SText> */}
                 <SHr />
-                <SText fontSize={18}>Para poder trabajar registra tus documentos en la pestaña Mis documentos.</SText>
+                <SText col={"xs-11"} fontSize={18} center>Para poder trabajar registra tus documentos en la pestaña Mis documentos.</SText>
             </SView>
 
             <SHr height={32} />
@@ -90,7 +90,7 @@ class index extends Component {
                     <MenuButtom label={"Publicaciones"} url={"/publicacion"} icon={<SIcon name="Profanity" fill='#fff' />} />
                 </MenuPages>
             </SView>
-            <SHr height={100} />
+            {/* <SHr height={100} /> */}
         </SPage>
     }
 }

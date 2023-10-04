@@ -20,13 +20,6 @@ export default ({ store }) => {
                 app_version: packageInfo.version
             };
 
-            let tbcli = Model.tbcli.Action.getCliente();
-            if (tbcli) {
-                tags["idcli"] = tbcli.idcli
-                tags["user_type"] = "cliente"
-
-            }
-
             var usuario = props.state.usuarioReducer.usuarioLog;
             if (usuario) {
                 tags["key_usuario"] = usuario.key;
