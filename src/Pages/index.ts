@@ -20,7 +20,7 @@ import info from './info';
 import datos from './datos';
 import publicacion from './publicacion';
 import requisitos from './requisitos';
-
+import viajar from "./viajar"
 export default SPage.combinePages("/", {
   "": carga,
   "root": root,
@@ -40,5 +40,6 @@ export default SPage.combinePages("/", {
   ...info,
   ...ruta,
   ...publicacion,
-  ...datos
+  ...datos,
+  ...viajar
 });

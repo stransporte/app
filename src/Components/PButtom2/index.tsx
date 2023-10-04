@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { Component } from 'react';
 import { SLoad, SText, STheme, SView } from 'servisofts-component';
 
@@ -40,11 +41,11 @@ export default class PButtom2 extends Component<PButtom2_props> {
             onPress={() => {
                 if (this.props.loading) return;
                 if (this.props.onPress) {
-                    this.props.onPress();   
+                    this.props.onPress();
                 }
             }} >
-            {this.props.loading ? <SLoad /> : <SText {...this.props} color={this.props.outline ? STheme.color.secondary : bgColor}  fontSize={16}>
-                {/* {this.props.children} */}
+            {this.props.loading ? <SLoad /> : <SText {...this.props} color={this.props.outline ? STheme.color.secondary : bgColor} fontSize={16}>
+                {this.props.children}
             </SText>}
         </SView>);
     }
