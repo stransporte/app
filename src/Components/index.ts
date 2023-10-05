@@ -11,7 +11,6 @@ import BtnNavegar from "./BtnNavegar"
 import BotonRecargar from "./BotonRecargar"
 import Popups from "./Popups"
 import BtnRedes from "./BtnRedes"
-import Banner from "./Banner"
 import Producto from "./Producto"
 import Categoria from "./Categoria"
 import Carrito from "./Carrito"
@@ -34,7 +33,6 @@ export {
     BotonRecargar,
     Popups,
     BtnRedes,
-    Banner,
     Producto,
     Categoria,
     Carrito,

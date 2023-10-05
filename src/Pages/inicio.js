@@ -34,7 +34,7 @@ class inicio extends Component {
                     <SHr height={40} />
                     <SView center backgroundColor={"#37A614"} style={{ borderRadius: 10, borderColor: "#1E7F44", borderBottomWidth: 3, padding: 10 }}
                         onPress={() => {
-                            SNavigation.navigate("/login-cliente")
+                            SNavigation.navigate("/loginUser")
                         }}
                     >
                         <SText fontSize={25} color={STheme.color.white} bold center>CLIC AQUÍ</SText>

@@ -21,11 +21,6 @@ export default class SectionHeader extends Component {
                         <PButtom2 outline={false} onPress={() => {
                         }}>Inicio Sesión</PButtom2>
                     </SView>
-                    <SView col={"xs-6"} height >
-                        <PButtom2 outline={true} onPress={() => {
-                            SNavigation.navigate("/registro")
-                        }}>Registro</PButtom2>
-                    </SView>
                 </SView>
             </SView>
         );

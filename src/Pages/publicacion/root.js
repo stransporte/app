@@ -171,7 +171,7 @@ class index extends Component {
         return (
             <SPage
                 navBar={<TopBar type={"home"} />}
-                // footer={this.footer()}
+                footer={this.footer()}
                 disableScroll
                 center
             >
@@ -184,9 +184,13 @@ class index extends Component {
                 <SView col={"xs-11 sm-11 md-8 lg-6 xl-4"} flex>
                     {this.renderPublicaciones()}
                 </SView>
-                {/* <SHr height={40} /> */}
+                <SHr height={40} />
             </SPage>
         );
+    }
+
+     footer() {
+        return <BottomNavigator url={"/inicio"} />
     }
 
  

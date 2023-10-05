@@ -13,7 +13,7 @@ export default class Header extends Component {
             <SView col={"xs-12"} center backgroundColor={STheme.color.primary}>
                 <SHr height={30} />
                 <SView col={"xs-11"} height={150} center>
-                    <SIcon name={"LogoWhite"} fill={STheme.color.secondary} height={100} />
+                    <SIcon name={"LogoClear"} fill={STheme.color.secondary} height={100} />
                 </SView>
                 <SHr height={16} />
                 <SView center col={"xs-10"}>
