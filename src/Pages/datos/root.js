@@ -31,6 +31,7 @@ class index extends Component {
             dato: obj.dato,
             tipo: obj.tipo,
             key: obj.key,
+            key_usuario_verificador: obj.key_usuario_verificador,
             onSucces: (e) => {
                 this.componentDidMount();
             }

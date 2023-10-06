@@ -39,7 +39,8 @@ class rutas extends Component {
             space={10}
             data={this.state.data}
             render={(data) => {
-                return <SView col={"xs-12"} card padding={10} row>
+                return <SView col={"xs-12"} card padding={10} row 
+                onPress={()=>{SNavigation.navigate("/pasajero/aviso_reserva")}}>
                     <SText fontSize={20} bold>{data.inicio}</SText>
                     <SText fontSize={20} bold> - {data.fin}</SText>
                     <SHr />
@@ -58,15 +59,7 @@ class rutas extends Component {
                     <Container>
                         <SHr height={16} />
                         {this.cardRutas()}
-                        <SHr height={16} />
-
-                        {/* <SHr height={16} />
-                        {this.cardOpciones("Comprar pasaje", "Reserva tu asiento y viaja de manera segura y barata.", require('../../Assets/img/pasaje.png'), "/pasajero/rutas")}
-                        <SHr height={15} />
-                        {this.cardOpciones("Pedir expreso", "Te recogemos desde tu ubicación.", require('../../Assets/img/expreso.png'), "/pasajero/expreso")}
-                        <SHr height={15} />
-                        {this.cardOpciones("Enviar encomiendas", "Envía paquetes al destino..", require('../../Assets/img/encomienda.png'), "/pasajero/encomienda")} */}
-                        <SHr height={50} />
+                        <SHr height={60} />
                     </Container>
                 </SView>
             </SPage>

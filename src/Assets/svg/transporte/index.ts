@@ -7,6 +7,7 @@ import Ipasajero, { ReactComponent as IpasajeroW } from '../transporte/ipasajero
 import Iconductor, { ReactComponent as IconductorW } from '../transporte/iconductor.svg';
 import LogoFooter, { ReactComponent as LogoFooterW } from '../transporte/logoFooter.svg';
 import Irutas, { ReactComponent as IrutasW } from '../transporte/irutas.svg';
+import AvisoReserva, { ReactComponent as AvisoReservaW } from '../transporte/aviso_reserva.svg';
 
 
 
@@ -23,6 +24,8 @@ const Assets = {
 	"Iconductor": { Native: Iconductor, Web: IconductorW },
 	"LogoFooter": { Native: LogoFooter, Web: LogoFooterW },
 	"Irutas": { Native: Irutas, Web: IrutasW },
+	"AvisoReserva": { Native: AvisoReserva, Web: AvisoReservaW },
+	
 
 	
 	

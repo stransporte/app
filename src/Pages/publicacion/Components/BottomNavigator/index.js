@@ -30,7 +30,7 @@ export default class index extends Component {
             <SView width={55} height={55}>
                 {obj.icon}
                 <SHr height={33} />
-                <SText fontSize={10} center color={STheme.color.black} >{obj.label}</SText>
+                <SText fontSize={10} center color={STheme.color.white} >{obj.label}</SText>
             </SView>
             <SView width={8} height />
         </SView>
@@ -71,9 +71,12 @@ export default class index extends Component {
         </SView>
     }
     render() {
-        return <SView col={"xs-12"} height={55} center>
-            {this.getGradient()}
-            <SView col={"xs-12"} style={{ borderBottomWidth: 1, borderBottomColor: STheme.color.primary }}></SView>
+        return <SView col={"xs-12"} height={55} center >
+            <SGradient colors={["#155830", "#37A614" ]} />
+            {/* <SGradient colors={["#37A614", "#155830" + "20"]} /> */}
+
+            {/* {this.getGradient()} */}
+            {/* <SView col={"xs-12"} style={{ borderBottomWidth: 1, borderBottomColor: STheme.color.primary }}></SView> */}
             <SView col={"xs-11"} row flex center  >
                 {/* {this.getOption({ key: "home", icon: <SIcon name={"Home"} fill={STheme.color.primary} stroke={(this.props.url == "/root") ? STheme.color.secondary : STheme.color.text} />, href: "/root" })} */}
                 {/* {this.getOption({ key: "search", icon: <SIcon name={"Search2"} fill={STheme.color.primary} stroke={(this.props.url == "/sucursal") ? STheme.color.secondary : STheme.color.text} />, href: "/sucursal" })} */}

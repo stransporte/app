@@ -292,7 +292,7 @@ class index extends Component<PublicacionPropsType> {
             <SHr height={4} />
             {this.renderFecha()}
 
-            {/* <SHr /> */}
+            <SHr height={20} />
         </SView >
         );
     }
