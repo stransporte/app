@@ -31,6 +31,7 @@ class index extends Component {
             dato: obj.dato,
             tipo: obj.tipo,
             key: obj.key,
+            key_usuario_verificador: obj.key_usuario_verificador,
             onSucces: (e) => {
                 this.componentDidMount();
             }
@@ -43,7 +44,7 @@ class index extends Component {
         let label = "Pendiente de registar"
         if (obj.dato) {
             color = STheme.color.warning
-            label = "En proceso de verificacion"
+            label = "En proceso de verificación"
         }
         if (obj.key_usuario_verificador) {
             color = STheme.color.success
@@ -68,7 +69,7 @@ class index extends Component {
                     <SHr h={30} />
                     <SText bold fontSize={18}>{"Adjunta tus documentos"}</SText>
                     <SHr />
-                    <SText fontSize={16}>{"Tus documentos seran verificados para que puedas hacer viajes"}</SText>
+                    <SText fontSize={16}>{"Tus documentos serán verificados para que puedas hacer viajes."}</SText>
                     <SHr h={30} />
                     <SList
                         order={[{ key: "index", order: "asc" }]}

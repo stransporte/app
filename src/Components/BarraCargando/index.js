@@ -38,7 +38,7 @@ export default class BarraCargando extends PureComponent {
     }
     render() {
         return (
-            <SView col={"xs-12"} height={6} style={{ justifyContent: 'center', overflow: 'hidden', backgroundColor: STheme.color.card, borderRadius: 8 }}
+            <SView col={"xs-12"} height={6} style={{ justifyContent: 'center', overflow: 'hidden', backgroundColor: "#1E7F44", borderRadius: 8 }}
                 {...this.props}
                 onLayout={(event) => {
                     this.setState({ size: event.nativeEvent.layout.width })

@@ -11,7 +11,7 @@ class index extends Component {
                 SNavigation.replace("/root")
             } else {
                 // SNavigation.replace("/login")
-                SNavigation.replace("/login")
+                SNavigation.replace("/publicacion")
             }
         })
     }

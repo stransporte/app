@@ -5,11 +5,10 @@ import { AccentBar, Container } from '../../Components';
 // import SectionApis from './components/SectionApis';
 import SectionFooter from './components/SectionFooter';
 import SectionForm from './components/SectionForm';
-import SectionHeader from './components/SectionHeader';
 import BottomBarra from '../../Components/BottomBarra';
+import SectionHeader from './components/SectionHeader';
 
-
-class login extends Component {
+class loginUser extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,4 +46,4 @@ class login extends Component {
 const initStates = (state) => {
     return { state }
 };
-export default connect(initStates)(login);
+export default connect(initStates)(loginUser);

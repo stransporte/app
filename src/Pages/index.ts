@@ -2,7 +2,9 @@ import { SPage, SPageListProps } from 'servisofts-component';
 
 import root from './root';
 import carga from "./carga"
+import inicio from "./inicio"
 import login from "./login";
+import loginUser from "./loginUser";
 import registro from './registro';
 import sql from './sql/index';
 import privacidad from './privacidad';
@@ -21,12 +23,17 @@ import datos from './datos';
 import publicacion from './publicacion';
 import requisitos from './requisitos';
 import viajar from "./viajar"
+
+import pasajero from "./pasajero"
+
 export default SPage.combinePages("/", {
   "": carga,
   "root": root,
+  inicio,
   requisitos,
   wiki,
   ...login,
+  ...loginUser,
   ...registro,
   sql,
   "privacidad": privacidad,
@@ -41,5 +48,6 @@ export default SPage.combinePages("/", {
   ...ruta,
   ...publicacion,
   ...datos,
-  ...viajar
+  ...viajar,
+  ...pasajero
 });

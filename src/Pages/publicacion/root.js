@@ -137,41 +137,44 @@ class index extends Component {
         // if (!this.state.data) return <SLoad />
 
 
-        return <FlatList
-            onRefresh={handleRefresh}
-            refreshing={this.state.refreshing}
-            // scrollEnabled={false}
-            ref={ref => this.list = ref}
-            pinchGestureEnabled={false}
-            data={[...Object.values(data).sort((a, b) => new SDate(a.fecha_on, "yyyy-MM-ddThh:mm:ss").getTime() >= new SDate(b.fecha_on, "yyyy-MM-ddThh:mm:ss").getTime() ? -1 : 1)]}
-            style={{
-                width: "100%",
-            }}
-            onViewableItemsChanged={this.onViewableItemsChanged}
-            viewabilityConfig={{
-                minimumViewTime: 700,
-                itemVisiblePercentThreshold: 75
-            }}
-            onEndReachedThreshold={0.3}
+        return <>
+            <FlatList
+                onRefresh={handleRefresh}
+                refreshing={this.state.refreshing}
+                // scrollEnabled={false}
+                ref={ref => this.list = ref}
+                pinchGestureEnabled={false}
+                data={[...Object.values(data).sort((a, b) => new SDate(a.fecha_on, "yyyy-MM-ddThh:mm:ss").getTime() >= new SDate(b.fecha_on, "yyyy-MM-ddThh:mm:ss").getTime() ? -1 : 1)]}
+                style={{
+                    width: "100%",
+                }}
+                onViewableItemsChanged={this.onViewableItemsChanged}
+                viewabilityConfig={{
+                    minimumViewTime: 700,
+                    itemVisiblePercentThreshold: 75
+                }}
+                onEndReachedThreshold={0.3}
 
-            // onViewableItemsChanged={onViewableItemsChanged}
-            onEndReached={() => {
-                this.componentDidMount();
-            }}
-            ListFooterComponent={() => this.state.loading ? <SLoad size="large" /> : null}
-            keyExtractor={item => item.key.toString()}
-            ItemSeparatorComponent={() => <SHr h={40} />}
-            renderItem={itm => <Publicacion.Card
-                ref={ref => this.ref[itm.item.key] = ref}
-                data={itm.item} usuario={this.state?.usuarios[itm?.item?.key_usuario]?.usuario} />}
-        />
+                // onViewableItemsChanged={onViewableItemsChanged}
+                onEndReached={() => {
+                    this.componentDidMount();
+                }}
+                ListFooterComponent={() => this.state.loading ? <SLoad size="large" /> : null}
+                keyExtractor={item => item.key.toString()}
+                ItemSeparatorComponent={() => <SHr h={20} />}
+                renderItem={itm => <Publicacion.Card
+                    ref={ref => this.ref[itm.item.key] = ref}
+                    data={itm.item} usuario={this.state?.usuarios[itm?.item?.key_usuario]?.usuario} />}
+            />
+            {/* <SHr height={40} /> */}
+        </>
     }
 
     render() {
         return (
             <SPage
                 navBar={<TopBar type={"home"} />}
-                // footer={this.footer()}
+                footer={this.footer()}
                 disableScroll
                 center
             >
@@ -183,13 +186,18 @@ class index extends Component {
                 </Container> */}
                 <SView col={"xs-11 sm-11 md-8 lg-6 xl-4"} flex>
                     {this.renderPublicaciones()}
+                    {/* <SHr height={40} /> */}
+
                 </SView>
-                {/* <SHr height={40} /> */}
             </SPage>
         );
     }
 
- 
+    footer() {
+        return <BottomNavigator url={"/inicio"} />
+    }
+
+
 }
 const initStates = (state) => {
     return { state }
