@@ -3,6 +3,7 @@ import { SDate, SHr, SIcon, SImage, SLoad, SNavigation, SPage, SPopup, SText, ST
 import BarraCargando from '../BarraCargando';
 // import Restaurante from '../Restaurante';
 import Pedido from '../../Components/Pedido';
+import PButtom3 from '../PButtom3';
 
 // import DetalleBox from './DetalleBox';
 // import HoraEstimada from './HoraEstimada';
@@ -25,7 +26,6 @@ class index extends Component<BotonesEstadoPropsType> {
     render_buttom({ label, icon, loading, complete, chat }) {
         return <SView col={"xs-3.5"} style={{ borderBottomWidth: 3, }} border={'transparent'} center>
             <SHr height={8} />
-
             {(chat == false) ? <Pedido.Chat data={this.props.data} /> : null}
             <SView width={48} height={48}>
                 <SIcon name={icon} fill={STheme.color.primary} />
@@ -40,21 +40,16 @@ class index extends Component<BotonesEstadoPropsType> {
         </SView>
     }
     render_buttom_({ label, loading }) {
-        return <SView col={"xs-3.5"} style={{ borderBottomWidth: 3, }} border={'transparent'} center>
+        return <SView col={"xs-10"} style={{ borderBottomWidth: 3, }} border={'transparent'} center>
             <SHr height={8} />
-
+            <SText color={STheme.color.white} style={{ fontSize: 12 }} bold>{label}</SText>
             {/* {(chat == false) ? <Pedido.Chat data={this.props.data} /> : null} */}
-            <SView width={48} height={48}>
-                {/* <SIcon name={'MPedido'} fill={STheme.color.primary} /> */}
-            </SView>
             <SHr height={8} />
             <SView col={"xs-12"} height={10} backgroundColor={STheme.color.card} style={{ borderRadius: 16, overflow: 'hidden', }} >
                 {!!loading ? <BarraCargando height={8} /> : null}
                 {/* {!!complete ? <SView col={"xs-12"} height backgroundColor={STheme.color.primary} /> : null} */}
-                
             </SView>
             <SHr height={4} />
-            <SText color={STheme.color.white} style={{ fontSize: 12 }} bold>{label}</SText>
         </SView>
     }
     getBotones() {
@@ -89,26 +84,34 @@ class index extends Component<BotonesEstadoPropsType> {
         );
     }
 
-
-  
-
     render() {
-
         return <SView col={"xs-12"} center>
-            <SView col={"xs-12 md-7"} center style={{ borderRadius: 12,  }} onPress={() => {
+            <SView col={"xs-12 md-7"} center style={{ borderRadius: 12, }} onPress={() => {
             }} >
                 <SHr height={10} />
-               
                 <SView col={"xs-12"} center>
                     <SIcon name='Idetall' height={10} />
                 </SView>
                 <SHr height={4} />
-                <SView height={56} col={"xs-12"} center>
-                    {/* <HoraEstimada {...this.props} /> */}
-                </SView>
-               
-                {this.render_buttom_({label:"Llega a la parada más cercana",loading:true})}
+                {/* <SView height={56} col={"xs-12"} center> */}
+                {/* <HoraEstimada {...this.props} /> */}
+                {/* </SView> */}
+                {this.render_buttom_({ label: "Llega a la parada más cercana", loading: true })}
                 <SHr />
+                <SView col={"xs-11"} row>
+                    <SView col={"xs-6"}>
+                        <SText fontSize={15}>Posible hora de llegada:</SText>
+                    </SView>
+                    <SView col={"xs-4"} flex style={{ alignItems: "flex-end" }}>
+                        <SText fontSize={20} bold>11:30 AM</SText>
+                    </SView>
+                    <SHr height={10} />
+                    <SView col={"xs-12"} row center>
+                        <PButtom3 onPress={() => { SNavigation.navigate("/reserva") }}>RESERVAR</PButtom3>
+                    </SView>
+                    <SHr height={30} />
+                </SView>
+
             </SView >
         </SView >
     }

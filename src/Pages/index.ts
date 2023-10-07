@@ -25,6 +25,7 @@ import requisitos from './requisitos';
 import viajar from "./viajar"
 
 import pasajero from "./pasajero"
+import reserva from "./reserva"
 
 export default SPage.combinePages("/", {
   "": carga,
@@ -49,5 +50,6 @@ export default SPage.combinePages("/", {
   ...publicacion,
   ...datos,
   ...viajar,
-  ...pasajero
+  ...pasajero,
+  ...reserva
 });

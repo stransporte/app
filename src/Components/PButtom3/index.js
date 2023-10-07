@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { SLoad, SText, STheme, SView } from 'servisofts-component';
 
-type PButtom_props = {
+type PButtom3_props = {
     primary?: boolean,
     secondary?: boolean,
     withe?: boolean,
@@ -14,7 +14,7 @@ type PButtom_props = {
     height?: number,
 }
 
-export default class PButtom extends Component<PButtom_props> {
+export default class PButtom extends Component<PButtom3_props> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -22,7 +22,8 @@ export default class PButtom extends Component<PButtom_props> {
     }
 
     render() {
-        var bgColor = this.props.primary ? STheme.color.primary : this.props.secondary ? STheme.color.info : STheme.color.primary;
+        // var bgColor = this.props.primary ? STheme.color.info : this.props.secondary ? STheme.color.info : STheme.color.primary;
+        var bgColor = STheme.color.info ;
         var colorText = STheme.color.white;
         if (this.props.withe) {
             bgColor = "#fff"

@@ -18,6 +18,7 @@ import Header from "./Header"
 import Btn from "./Btn"
 import Usuario from "./Usuario"
 import Visitas from "./Visitas"
+import Gradient from "./Gradient"
 
 export {
     TopBar,
@@ -39,5 +40,6 @@ export {
     Usuario,
     Header,
     Btn,
-    Visitas
+    Visitas,
+    Gradient
 }

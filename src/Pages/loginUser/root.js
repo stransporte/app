@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { SHr, SIcon, SNavigation, SPage, SPopup, SText, STheme, SView } from 'servisofts-component';
-import { AccentBar, Container } from '../../Components';
+import { AccentBar, Container, Gradient } from '../../Components';
 // import SectionApis from './components/SectionApis';
 import SectionFooter from './components/SectionFooter';
 import SectionForm from './components/SectionForm';
@@ -16,11 +16,11 @@ class loginUser extends Component {
     }
 
     render() {
-
         return (
             <SPage footer={<BottomBarra url={"/login"} />} >
                 <SView col={"xs-12"} center>
                     <SView col={"xs-12"} backgroundColor={STheme.color.primary}>
+                        <Gradient/>
                         <Container>
                             <SHr height={50} />
                             <SectionHeader />

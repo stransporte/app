@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { SForm, SHr, SIcon, SImage, SLoad, SMarker, SMath, SNavigation, SPage, SPopup, SText, STheme, SView, SMapView, SInput, SMapView2, SThread } from 'servisofts-component';
-import { BottomNavigator, Container, FloatButtomTap, TopBar } from '../../Components';
+import { BottomNavigator, Container, FloatButtomTap, Gradient, TopBar } from '../../Components';
 
 import SSocket, { setProps } from 'servisofts-socket';
 import Pedido from '../../Components/Pedido';
@@ -89,7 +89,8 @@ class index extends Component {
     }
 
     showCards() {
-        return <SView height={200} style={{ backgroundColor: STheme.color.primary, borderTopLeftRadius: 16, borderTopRightRadius: 16 }}>
+        return <SView height={200} style={{ backgroundColor: STheme.color.primary, borderTopLeftRadius: 16, borderTopRightRadius: 16 , overflow:"hidden"}}>
+            <Gradient style={{overflow: 'hidden'}}/>
             {/* <Pedido.BotonesEstado data={this.props.data} posicion_conductor={this.state?.posicion_conductor} /> */}
             <Pasajero.BotonesEstado data={this.state.data} />
         </SView>

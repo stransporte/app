@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SHr, SIcon, SNavigation, SPage, STheme, SThread, SView } from 'servisofts-component';
+import { SGradient, SHr, SIcon, SNavigation, SPage, STheme, SThread, SView } from 'servisofts-component';
 import Model from '../Model';
+import { Gradient } from '../Components';
 
 class index extends Component {
     state = {}
@@ -27,13 +28,15 @@ class index extends Component {
         </SView>
     }
     render() {
+        console.log(STheme.getTheme() + " TEMAAA")
         return (
             <SPage hidden disableScroll center>
                 <SView col={"xs-12"} flex backgroundColor={STheme.color.primary} center onLayout={(evt) => {
                     this.setState({ layout: evt.nativeEvent.layout })
                 }}>
+                     <Gradient/>
                     <SView col={"xs-6 sm-5 md-4 lg-3 xl-2 xxl-1.5"}>
-                        <SIcon name={"LogoClear"} fill={STheme.color.secondary} />
+                        <SIcon name={"LogoClear"} fill={STheme.getTheme() == "dark" ? STheme.color.black : STheme.color.white} />
                     </SView>
                     {/* {this.renderFooter()} */}
                 </SView>
