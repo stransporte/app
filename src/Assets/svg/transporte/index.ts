@@ -8,6 +8,8 @@ import Iconductor, { ReactComponent as IconductorW } from '../transporte/iconduc
 import LogoFooter, { ReactComponent as LogoFooterW } from '../transporte/logoFooter.svg';
 import Irutas, { ReactComponent as IrutasW } from '../transporte/irutas.svg';
 import AvisoReserva, { ReactComponent as AvisoReservaW } from '../transporte/aviso_reserva.svg';
+import Prox, { ReactComponent as ProxW } from '../transporte/prox.svg';
+import MascaraTrufi, { ReactComponent as MascaraTrufiW } from '../transporte/mascaraTrufi.svg';
 
 
 
@@ -25,6 +27,9 @@ const Assets = {
 	"LogoFooter": { Native: LogoFooter, Web: LogoFooterW },
 	"Irutas": { Native: Irutas, Web: IrutasW },
 	"AvisoReserva": { Native: AvisoReserva, Web: AvisoReservaW },
+	"Prox": { Native: Prox, Web: ProxW },
+	"MascaraTrufi": { Native: MascaraTrufi, Web: MascaraTrufiW },
+	
 	
 
 	

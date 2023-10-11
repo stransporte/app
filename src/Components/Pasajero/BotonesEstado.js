@@ -42,11 +42,11 @@ class index extends Component<BotonesEstadoPropsType> {
     render_buttom_({ label, loading }) {
         return <SView col={"xs-10"} style={{ borderBottomWidth: 3, }} border={'transparent'} center>
             <SHr height={8} />
-            <SText color={STheme.color.white} style={{ fontSize: 12 }} bold>{label}</SText>
+            <SText color={STheme.color.white} style={{ fontSize: 13 }} bold>{label}</SText>
             {/* {(chat == false) ? <Pedido.Chat data={this.props.data} /> : null} */}
             <SHr height={8} />
             <SView col={"xs-12"} height={10} backgroundColor={STheme.color.card} style={{ borderRadius: 16, overflow: 'hidden', }} >
-                {!!loading ? <BarraCargando height={8} /> : null}
+                {!!loading ? <BarraCargando height={8} backgroundColor={"#37A614"}/> : null}
                 {/* {!!complete ? <SView col={"xs-12"} height backgroundColor={STheme.color.primary} /> : null} */}
             </SView>
             <SHr height={4} />
@@ -100,10 +100,10 @@ class index extends Component<BotonesEstadoPropsType> {
                 <SHr />
                 <SView col={"xs-11"} row>
                     <SView col={"xs-6"}>
-                        <SText fontSize={15}>Posible hora de llegada:</SText>
+                        <SText fontSize={15} color={STheme.color.white}>Posible hora de llegada:</SText>
                     </SView>
                     <SView col={"xs-4"} flex style={{ alignItems: "flex-end" }}>
-                        <SText fontSize={20} bold>11:30 AM</SText>
+                        <SText fontSize={20} bold color={STheme.color.white}>11:30 AM</SText>
                     </SView>
                     <SHr height={10} />
                     <SView col={"xs-12"} row center>

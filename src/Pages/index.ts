@@ -22,10 +22,11 @@ import info from './info';
 import datos from './datos';
 import publicacion from './publicacion';
 import requisitos from './requisitos';
-import viajar from "./viajar"
+import viajar from "./viajar";
 
-import pasajero from "./pasajero"
-import reserva from "./reserva"
+import pasajero from "./pasajero";
+import reserva from "./reserva";
+import proximamente from "./proximamente";
 
 export default SPage.combinePages("/", {
   "": carga,
@@ -51,5 +52,6 @@ export default SPage.combinePages("/", {
   ...datos,
   ...viajar,
   ...pasajero,
-  ...reserva
+  ...reserva,
+  "proximamente": proximamente,
 });

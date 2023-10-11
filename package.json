@@ -56,6 +56,7 @@
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
     "servisofts-background-location": "2.0.1",
+    "servisofts-canvas": "1.0.4",
     "servisofts-charts": "1.0.1",
     "servisofts-component": "3.0.3",
     "servisofts-db": "1.0.1",

@@ -40,9 +40,9 @@ class root extends Component {
                         <SHr height={16} />
                         {this.cardOpciones("Comprar pasaje", "Reserva tu asiento y viaja de manera segura y barata.", require('../../Assets/img/pasaje.png'), "/pasajero/rutas")}
                         <SHr height={15} />
-                        {this.cardOpciones("Pedir expreso", "Te recogemos desde tu ubicación.", require('../../Assets/img/expreso.png'), "/pasajero/expreso")}
+                        {this.cardOpciones("Pedir expreso", "Te recogemos desde tu ubicación.", require('../../Assets/img/expreso.png'), "/proximamente")}
                         <SHr height={15} />
-                        {this.cardOpciones("Enviar encomiendas", "Envía paquetes al destino..", require('../../Assets/img/encomienda.png'), "/pasajero/encomienda")}
+                        {this.cardOpciones("Enviar encomiendas", "Envía paquetes al destino..", require('../../Assets/img/encomienda.png'), "/proximamente")}
                         <SHr height={50} />
                     </Container>
                 </SView>
