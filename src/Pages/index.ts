@@ -28,6 +28,9 @@ import pasajero from "./pasajero";
 import reserva from "./reserva";
 import proximamente from "./proximamente";
 
+
+import conductor from "./conductor";
+
 export default SPage.combinePages("/", {
   "": carga,
   "root": root,
@@ -54,4 +57,5 @@ export default SPage.combinePages("/", {
   ...pasajero,
   ...reserva,
   "proximamente": proximamente,
+  ...conductor,
 });

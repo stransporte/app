@@ -86,7 +86,7 @@ class index extends Component {
                     {/* <MenuButtom label={"Verificacion de conductores"} url={"/datos/pendiente_verificacion"} icon={<SIcon name="Add"/>} /> */}
                     <MenuButtom label={"Mis documentos"} url={"/datos"} params={{ key_usuario: Model.usuario.Action.getKey() }} icon={<SIcon name="Add" />} />
                     <MenuButtom label={"Mi perfil"} url={"/perfil"} icon={this.getIconProfile()} />
-                    <MenuButtom label={"Viajar"} url={"/viajar"} icon={<SIcon name="Cheque" />} />
+                    <MenuButtom label={"Iniciar viaje"} url={"/conductor/rutas"} icon={<SIcon name="Cheque" />} />
                     <MenuButtom label={"Publicaciones"} url={"/publicacion"} icon={<SIcon name="Profanity" fill='#fff' />} />
                 </MenuPages>
             </SView>

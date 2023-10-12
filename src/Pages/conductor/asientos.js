@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { SGradient, SHr, SIcon, SImage, SNavigation, SPage, SText, STheme, SThread, SView } from 'servisofts-component';
-import { Container, Gradient } from '../../Components';
+import { Container, Gradient, PButtom } from '../../Components';
 import BarraCargando from '../../Components/BarraCargando';
-import Canvas from './Components/Canvas';
 
-class inicio extends Component {
+class asientos extends Component {
     state = {}
 
 
@@ -14,16 +13,16 @@ class inicio extends Component {
             <SPage   >
                 <SHr height={30} />
                 <Container >
-                    <SView col={"xs-12"} card height={60} center>
-                        <SView col={"xs-10"} center>
-                            <SText bold>31 personas en cola</SText>
-                            <SHr height={10} />
-                            <BarraCargando height={8} backgroundColor={STheme.color.primary} />
-                        </SView>
+                    <SView col={"xs-12"}  height={60} center>
+                        <PButtom
+                            onPress={() => {
+                                SNavigation.navigate("/conductor/mapa_viaje")
+                            }}
+                        >Iniciar viaje</PButtom>
                     </SView>
                     <SHr height={15} />
-                    <SView col={"xs-12"} center >
-                        <SView  center width={300} height={660}>
+                    <SView col={"xs-12"}  style={{alignItems: "center" , justifyContent:"center", alignContent:"center"}} >
+                        <SView  width={300} height={660}>
                             <SIcon name={"MascaraTrufi"} width={300} height={660} fill={STheme.color.primary} style={{ zIndex: 999, position: "absolute" }} />
                             <SImage src={require('../../Assets/img/trufi.png')} style={{
                                 width: "100%",
@@ -42,14 +41,6 @@ class inicio extends Component {
                             }} />
                         </SView>
                     </SView>
-                    {/* <SView col={"xs-12"} center height >
-                        <Canvas
-                            img={"../../Assets/img/trufi.png'"}
-                            onClick={(evt, ref) => {
-                            }}
-                            paint={(ref) => {
-                            }} />
-                    </SView> */}
                     <SHr height={15} />
                 </Container>
             </SPage >
@@ -59,4 +50,4 @@ class inicio extends Component {
 const initStates = (state) => {
     return { state }
 };
-export default connect(initStates)(inicio);
+export default connect(initStates)(asientos);
