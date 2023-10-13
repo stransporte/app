@@ -98,14 +98,14 @@ class index extends Component {
 
 
     render() {
-        this.users = Model.usuario.Action.getAll();
-        if (!this.users) return <SLoad />
+        // this.users = Model.usuario.Action.getAll();
+        // if (!this.users) return <SLoad />
 
-        let user = {}
-        if (this.state.data) {
-            user = Object.values(this.users).find(o => o.idtransportista == this.state.data.idemp)
-            this.state.usuario = user
-        }
+        // let user = {}
+        // if (this.state.data) {
+        //     user = Object.values(this.users).find(o => o.idtransportista == this.state.data.idemp)
+        //     this.state.usuario = user
+        // }
 
         return <SPage disableScroll
             title={"Acércate a la ruta"}

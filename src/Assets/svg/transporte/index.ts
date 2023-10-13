@@ -1,5 +1,4 @@
 
-// import Logo, { ReactComponent as LogoW } from './logo.svg';
 import LogoClear, { ReactComponent as LogoClearW } from '../transporte/logoClear.svg';
 import BackArrow, { ReactComponent as BackArrowW } from '../transporte/backArrow.svg';
 import Franja1, { ReactComponent as Franja1W } from '../transporte/franja1.svg';
@@ -10,15 +9,13 @@ import Irutas, { ReactComponent as IrutasW } from '../transporte/irutas.svg';
 import AvisoReserva, { ReactComponent as AvisoReservaW } from '../transporte/aviso_reserva.svg';
 import Prox, { ReactComponent as ProxW } from '../transporte/prox.svg';
 import MascaraTrufi, { ReactComponent as MascaraTrufiW } from '../transporte/mascaraTrufi.svg';
-
+import AdmDocumentos, { ReactComponent as AdmDocumentosW } from '../transporte/admDocumentos.svg';
+import AdmPublicaciones, { ReactComponent as AdmPublicacionesW } from '../transporte/admPublicaciones.svg';
+import AdmViajar, { ReactComponent as AdmViajarW } from '../transporte/admViajar.svg';
 
 
 const Assets = {
 
-	// "Logo": { Native: Logo, Web: LogoW },
-	// "Logosolo": { Native: Logosolo, Web: LogosoloW },
-	// "Carga": { Native: Carga, Web: CargaW },
-	// "LogoWhite": { Native: LogoWhite, Web: LogoWhiteW },
 	"LogoClear": { Native: LogoClear, Web: LogoClearW },
 	"BackArrow": { Native: BackArrow, Web: BackArrowW },
 	"Franja1": { Native: Franja1, Web: Franja1W },
@@ -29,15 +26,11 @@ const Assets = {
 	"AvisoReserva": { Native: AvisoReserva, Web: AvisoReservaW },
 	"Prox": { Native: Prox, Web: ProxW },
 	"MascaraTrufi": { Native: MascaraTrufi, Web: MascaraTrufiW },
+	"AdmDocumentos": { Native: AdmDocumentos, Web: AdmDocumentosW },
+	"AdmPublicaciones": { Native: AdmPublicaciones, Web: AdmPublicacionesW },
+	"AdmViajar": { Native: AdmViajar, Web: AdmViajarW },
 	
 	
-
-	
-	
-	
-	
-	// "BackArrow": { Native: BackArrow, Web: BackArrowW },
-
 
 }
 

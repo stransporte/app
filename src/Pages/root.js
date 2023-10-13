@@ -18,6 +18,22 @@ class index extends Component {
             />
         </SView>
     }
+
+    componentDidMount() {
+        SSocket.sendPromise({
+            component: "tipo_vehiculo",
+            type: "getAll",
+        }).then(e => {
+            console.log("aquiiii");
+
+            console.log(e);
+            // this.setState({ data: e.data[0] })
+        }).catch(e => {
+            console.error(e);
+        })
+       
+    }
+
     datosUser() {
         var dataUser = Model.usuario.Action.getUsuarioLog();
         if (!dataUser) return <SLoad />
@@ -84,10 +100,11 @@ class index extends Component {
             <SView col={"xs-12"} flex >
                 <MenuPages path={"/"} permiso={"page"}>
                     {/* <MenuButtom label={"Verificacion de conductores"} url={"/datos/pendiente_verificacion"} icon={<SIcon name="Add"/>} /> */}
-                    <MenuButtom label={"Mis documentos"} url={"/datos"} params={{ key_usuario: Model.usuario.Action.getKey() }} icon={<SIcon name="Add" />} />
+                    <MenuButtom label={"Mis documentos"} url={"/datos"} params={{ key_usuario: Model.usuario.Action.getKey() }} icon={<SIcon name="AdmDocumentos" />} />
                     <MenuButtom label={"Mi perfil"} url={"/perfil"} icon={this.getIconProfile()} />
-                    <MenuButtom label={"Iniciar viaje"} url={"/conductor/rutas"} icon={<SIcon name="Cheque" />} />
-                    <MenuButtom label={"Publicaciones"} url={"/publicacion"} icon={<SIcon name="Profanity" fill='#fff' />} />
+                    <MenuButtom label={"Iniciar viaje"} url={"/conductor/rutas"} icon={<SIcon name="AdmViajar" />} />
+                    <MenuButtom label={"Publicaciones"} url={"/publicacion"} icon={<SIcon name="AdmPublicaciones" fill='#fff' />} />
+                    {/* <MenuButtom label={"Vehículo"} url={"/vehiculo"} icon={<SIcon name="AdmPublicaciones" fill='#fff' />} /> */}
                 </MenuPages>
             </SView>
             {/* <SHr height={100} /> */}

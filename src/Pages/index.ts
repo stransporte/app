@@ -30,6 +30,9 @@ import proximamente from "./proximamente";
 
 
 import conductor from "./conductor";
+import vehiculo from './vehiculo';
+import tipo_vehiculo from './tipo_vehiculo';
+
 
 export default SPage.combinePages("/", {
   "": carga,
@@ -58,4 +61,6 @@ export default SPage.combinePages("/", {
   ...reserva,
   "proximamente": proximamente,
   ...conductor,
+  ...vehiculo,
+  ...tipo_vehiculo,
 });
