@@ -10,4 +10,5 @@ ssh-keyscan -t rsa "$SSH_SERVER_HOST" >>~/.ssh/known_hosts
 
 echo "Termino el scan"
 
-scp ./README.md "$SSH_SERVER_HOST":~/
+echo "$SSH_SERVER_HOST:~/"
+scp ./README.md "$SSH_SERVER_HOST:~/"
