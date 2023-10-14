@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SForm, SHr, SList, SNavigation, SPage, SText, STheme, SView } from 'servisofts-component';
-import { Container } from '../../Components';
+import { SForm, SHr, SInput, SList, SLoad, SNavigation, SNotification, SPage, SPopup, SText, STheme, SView } from 'servisofts-component';
+import { Container, Link } from '../../Components';
 import SSocket from 'servisofts-socket'
 import Model from '../../Model';
 class index extends Component {
@@ -10,9 +10,13 @@ class index extends Component {
         this.state = {
         };
         this.key_usuario = SNavigation.getParam("key_usuario");
+        if (!this.key_usuario) {
+            SNavigation.goBack();
+        }
         // this.key_usuario = Model.usuario.Action.getKey()
     }
     componentDidMount() {
+        if (!this.key_usuario) return null;
         SSocket.sendPromise({
             component: "dato",
             type: "getAllDatos",
@@ -20,6 +24,16 @@ class index extends Component {
             key_usuario: this.key_usuario,
         }).then(e => {
             this.setState({ data: e.data })
+        })
+
+        SSocket.sendPromise({
+            component: "usuario_verificado",
+            type: "getByKeyUsuario",
+            key_usuario: this.key_usuario
+        }).then(e => {
+            this.setState({ usuario_verificado: e.data })
+        }).catch(e => {
+            console.error(e);
         })
     }
 
@@ -32,6 +46,8 @@ class index extends Component {
             tipo: obj.tipo,
             key: obj.key,
             key_usuario_verificador: obj.key_usuario_verificador,
+            fecha_verificacion: obj.fecha_verificacion,
+            key_usuario_dato: obj.key_usuario_dato,
             onSucces: (e) => {
                 this.componentDidMount();
             }
@@ -62,9 +78,116 @@ class index extends Component {
             </SView>
         </SView>
     }
+
+
+    obsinput: SInput
+    renderVirify = () => {
+        let permiso = Model.usuarioPage.Action.getPermiso({ url: "/datos", permiso: "verificar", loading: "" });
+        if (!this?.state?.usuario_verificado) return <SLoad />
+        if (!permiso) {
+
+            if (this?.state?.usuario_verificado.key) {
+                return <SView>
+                    <SText>Ya estas verificado</SText>
+                </SView>
+            } else {
+                return <SView>
+                    <SText>Aun no estas verificado, adjunta tus documentos y espera la aprobacion.</SText>
+                </SView>
+            }
+        }
+
+        if (this?.state?.usuario_verificado.key) {
+            const { key_usuario_admin, fecha_on, observacion } = this.state.usuario_verificado
+            return <SView>
+                <SText color={STheme.color.success}>El usuario fue verificado en la fecha {fecha_on} por el administrador </SText>
+                <Link src={"/usuario/profile"} params={{ pk: key_usuario_admin }}>{key_usuario_admin}</Link>
+                <SHr />
+                <SText bold>Observacion: {observacion}</SText>
+                <SHr />
+
+                <Link onPress={() => {
+                    SPopup.confirm({
+                        title: "Seguro que quieres quitar la verificacion al usuario?",
+                        onPress: async () => {
+
+                            SSocket.sendPromise({
+                                component: "usuario_verificado",
+                                type: "editar",
+                                key_usuario: Model.usuario.Action.getKey(),
+                                data: {
+                                    ...this.state.usuario_verificado,
+                                    estado: 0,
+                                }
+                            }).then(e => {
+                                this.setState({
+                                    usuario_verificado: {}
+                                })
+                            }).catch(e => {
+                                SNotification.send({
+                                    title: "Error al quitar la verificacion del usuario.",
+                                    body: e?.error,
+                                    color: STheme.color.danger,
+                                    time: 5000,
+                                })
+                            })
+                        }
+                    })
+                }} color={STheme.color.danger}>{"Quitar verificacion"}</Link>
+                {/* <SText>Observacion: {observacion}</SText> */}
+            </SView>
+        }
+        return <SView col={"xs-12"}>
+            <SHr h={1} color={STheme.color.gray} />
+            <SHr />
+            <SText bold>HABILITA AL CONDUCTOR</SText>
+            <SText fontSize={12} color={STheme.color.warning} >Una vez tengas los documentos verificados, puedes habiltar al conductor para que pueda iniciar sus viajes.</SText>
+            <SHr />
+            <SInput
+                ref={ref => this.obsinput = ref}
+                type='textArea'
+                placeholder={"Escribe aqui la observacion"}
+            />
+            <SHr />
+            <Link onPress={() => {
+                const obs = this.obsinput.getValue();
+                if (!obs) {
+                    SNotification.send({
+                        title: "Verificacion de usuario",
+                        body: "La observacion no puede ser vacia.",
+                        color: STheme.color.danger,
+                        time: 5000,
+                    })
+                    return null;
+                }
+                SSocket.sendPromise({
+                    component: "usuario_verificado",
+                    type: "registro",
+                    key_usuario: Model.usuario.Action.getKey(),
+                    data: {
+                        key_usuario: this.key_usuario,
+                        observacion: obs
+
+                    }
+                }).then(e => {
+                    this.setState({ usuario_verificado: e.data })
+                }).catch(e => {
+                    SNotification.send({
+                        title: "Error al verificar usuario.",
+                        body: e?.error,
+                        color: STheme.color.danger,
+                        time: 5000,
+                    })
+                })
+            }}>HABILITAR</Link>
+        </SView>
+    }
     render() {
         return (
-            <SPage >
+            <SPage onRefresh={(resolve) => {
+                this.componentDidMount();
+                if (resolve) resolve();
+            }}>
                 <Container>
                     <SHr h={30} />
                     <SText bold fontSize={18}>{"Adjunta tus documentos"}</SText>
@@ -77,6 +200,8 @@ class index extends Component {
                         space={16}
                         render={this.renderItem.bind(this)}
                     />
+                    <SHr h={30} />
+                    {this.renderVirify()}
                 </Container>
             </SPage>
         );

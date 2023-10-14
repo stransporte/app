@@ -8,13 +8,15 @@ export default new SModel<Action, Reducer>({
     },
     Columns: {
         "key": { type: "text", pk: true },
+        "key_usuario": { type: "text", fk: "usuario" },
         "fecha_on": { type: "timestamp", },
         "estado": { type: "integer", },
-        
-        "Nombre": { type: "text", editable: true },
-        "nroFilas": { type: "text", editable: true },
-        "nroAsientos": { type: "double", editable: true },
-      
+
+        "descripcion": { type: "text", editable: true },
+        "observacion": { type: "text", editable: true },
+        "w": { type: "integer", editable: true },
+        "h": { type: "integer", editable: true },
+
     },
     image: {
         api: "root",

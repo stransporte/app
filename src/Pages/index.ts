@@ -33,7 +33,7 @@ import conductor from "./conductor";
 import vehiculo from './vehiculo';
 import tipo_vehiculo from './tipo_vehiculo';
 
-
+import version_required from './version_required';
 export default SPage.combinePages("/", {
   "": carga,
   "root": root,
@@ -63,4 +63,5 @@ export default SPage.combinePages("/", {
   ...conductor,
   ...vehiculo,
   ...tipo_vehiculo,
+  version_required
 });

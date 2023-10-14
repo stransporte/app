@@ -19,7 +19,7 @@ import Btn from "./Btn"
 import Usuario from "./Usuario"
 import Visitas from "./Visitas"
 import Gradient from "./Gradient"
-
+import Link from "./Link"
 export {
     TopBar,
     NavBar,
@@ -41,5 +41,6 @@ export {
     Header,
     Btn,
     Visitas,
-    Gradient
+    Gradient,
+    Link
 }

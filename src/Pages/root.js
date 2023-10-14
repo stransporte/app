@@ -20,17 +20,17 @@ class index extends Component {
     }
 
     componentDidMount() {
-        SSocket.sendPromise({
-            component: "tipo_vehiculo",
-            type: "getAll",
-        }).then(e => {
-            console.log("aquiiii");
+        // SSocket.sendPromise({
+        //     component: "tipo_vehiculo",
+        //     type: "getAll",
+        // }).then(e => {
+        //     console.log("aquiiii");
 
-            console.log(e);
-            // this.setState({ data: e.data[0] })
-        }).catch(e => {
-            console.error(e);
-        })
+        //     console.log(e);
+        //     // this.setState({ data: e.data[0] })
+        // }).catch(e => {
+        //     console.error(e);
+        // })
        
     }
 
