@@ -78,6 +78,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+/secrets
+
 .eslintcache
 .secrets.base64
 # SECRETS
@@ -89,6 +91,7 @@ yarn-error.log*
 /ios/Certificates.p12
 /ios/stransporte_app_profile.mobileprovision
 /ios/AuthKey_5KCFQBMUQK.p8
+/ios/AuthKey_N7G47KBF2S.p8
 
 /android/app/google-services.json
 /android/app/service-account.json
@@ -101,7 +104,6 @@ yarn-error.log*
 /src/LoginApi/config.ts
 /src/Firebase/index.js
 /src/Config/socket.ts
-
 
 # END
 .eslintcache
