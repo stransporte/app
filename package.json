@@ -1,6 +1,6 @@
 {
   "name": "stransporte_app",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "stransporte_app",
   "scripts": {
     "start": "react-native start",

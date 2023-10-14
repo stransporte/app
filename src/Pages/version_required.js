@@ -26,9 +26,8 @@ export default class version_required extends Component {
                         if (Platform.OS == "android") {
                             Linking.openURL("https://play.google.com/store/apps/details?id=com.stransporte_app")
                         } else if (Platform.OS == "ios") {
-                            // Linking.openURL("https://apps.apple.com/us/app/calistenia-bolivia/id6443573666")
+                            Linking.openURL("https://apps.apple.com/us/app/calistenia-bolivia/id6469413033")
                         }
-
                     }}>
                     <SText fontSize={16} bold>Actualizar</SText>
                 </SView>

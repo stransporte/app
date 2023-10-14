@@ -76,7 +76,7 @@ export default class SectionForm extends Component {
                             // }).catch((e) => {
                             //     this.setState({ loading: false, error: "Usuario o contraseña incorrectos." })
                             // })
-                            SNavigation.reset("/pasajero")
+                            SNavigation.replace("/pasajero", { telefono: data.telefono })
                         }
                     }}
                 />

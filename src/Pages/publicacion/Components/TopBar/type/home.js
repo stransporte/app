@@ -34,10 +34,10 @@ export default class home extends Component<TopBarPropsType> {
     }
     render() {
         return (<SView col={"xs-12"} height={50} backgroundColor={STheme.color.barColor} center row>
-             <Gradient/>
+             {/* <Gradient/> */}
             <SView col={"xs-12"} row height >
                 <SView width={50}>
-                    {this.getBack()}
+                    {/* {this.getBack()} */}
                 </SView>
                 {/* <SView width={115} height>
 
