@@ -25,14 +25,14 @@ if grep -qFx "Host $SSH_URL" "$config_file"; then
     echo "La entrada para el host ya existe en el archivo de configuración."
 else
     # Agregar la entrada del host al archivo de configuración
-    echo "Host $SSH_URL" >>"$config_file"
+    echo "Host 2.2" >>"$config_file"
     echo "  HostName $SSH_URL" >>"$config_file"
     echo "  User $SSH_USER" >>"$config_file"
     echo "  Port $SSH_PORT" >>"$config_file"
     echo "La entrada para el host se ha agregado al archivo de configuración."
 fi
 
-ssh-keyscan -t rsa $SSH_URL >>~/.ssh/known_hosts
+ssh-keyscan -t rsa 2.2 >>~/.ssh/known_hosts
 echo "Termino el scan"
 
-scp -r ./README.md $SSH_USER@$SSH_URL:~/
+scp -r ./README.md 2.2:~/
