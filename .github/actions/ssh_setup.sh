@@ -4,6 +4,7 @@
 mkdir -p ~/.ssh
 echo "creo la carpeta"
 
+
 cp ./public/id_rsa ~/.ssh/id_rsa
 echo "copio la llave"
 
