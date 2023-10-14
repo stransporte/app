@@ -2,9 +2,9 @@
 . $GITHUB_WORKSPACE/.env
 
 mkdir -p ~/.ssh
-cp -r ./.ssh ~/.ssh/id_rsa
+cp -r ./.ssh ~/.ssh/
 
 chmod 600 ~/.ssh/id_rsa
 
-ssh-keyscan -t rsa servisofts.com >> ~/.ssh/known_hosts
+ssh-keyscan -t rsa $SSH_SERVER_HOST >> ~/.ssh/known_hosts
 
