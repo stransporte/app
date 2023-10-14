@@ -105,8 +105,8 @@ android {
         applicationId "com.stransporte_app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10004
-        versionName "1.0.4"
+        versionCode 10010
+        versionName "1.0.10"
     }
     splits {
         abi {

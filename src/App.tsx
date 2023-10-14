@@ -13,11 +13,12 @@ import BackgroundImage from './Components/BackgroundImage';
 import packageInfo from "../package.json"
 // import BackgroundLocation from './BackgroundLocation';
 import Socket from './Socket';
-// Firebase.init().then(e => {
 
-// }).catch(e => { 
+Firebase.init().then(e => {
+
+}).catch(e => { 
     
-// })
+})
 // BackgroundLocation();
 function App(): JSX.Element {
     return <Redux>
