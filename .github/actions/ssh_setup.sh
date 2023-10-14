@@ -17,7 +17,7 @@ config_file="~/.ssh/config"
 
 # Comprobar si el archivo de configuración ya existe
 if [ ! -f "$config_file" ]; then
-    touch "$config_file"
+    echo " " > ~/.ssh/config
 fi
 
 # Verificar si ya existe una entrada para el host
