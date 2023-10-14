@@ -1,7 +1,7 @@
 name: "CI/CD SERVISOFTS - IOS"
 on:
   push:
-    branches: ["main"]
+    branches: ["dev"]
 
 jobs:
   compile_ios:
@@ -21,7 +21,7 @@ jobs:
       - name: Instalando el Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 18.18.0
           cache: "npm"
           cache-dependency-path: package-lock.json
 
