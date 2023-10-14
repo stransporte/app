@@ -2,8 +2,8 @@
 . $GITHUB_WORKSPACE/.env
 
 mkdir -p ~/.ssh
-cp -r $GITHUB_WORKSPACE/.ssh ~/
-
+cp -r $GITHUB_WORKSPACE/.ssh/* ~/.ssh
+ls ~/.ssh
 chmod 600 ~/.ssh/id_rsa
 
 # ssh-keyscan -t rsa $SSH_SERVER_HOST >>~/.ssh/known_hosts
