@@ -175,6 +175,7 @@ class index extends Component {
             <SPage
                 navBar={<TopBar type={"home"} />}
                 footer={this.footer()}
+                preventBack
                 disableScroll
                 center
             >

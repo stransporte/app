@@ -24,8 +24,6 @@ export default ({ store }) => {
             if (usuario) {
                 tags["key_usuario"] = usuario.key;
                 tags["user_type"] = "admin"
-                tags["idvendedor"] = usuario?.idvendedor
-                tags["idtransportista"] = usuario?.idtransportista
             }
 
             return {

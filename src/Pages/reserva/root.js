@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { SGradient, SHr, SIcon, SImage, SNavigation, SPage, SText, STheme, SThread, SView } from 'servisofts-component';
 import { Container, Gradient } from '../../Components';
 import BarraCargando from '../../Components/BarraCargando';
-import Canvas from './Components/Canvas';
+// import Canvas from './Components/Canvas';
 
 class inicio extends Component {
     state = {}

@@ -100,10 +100,12 @@ yarn-error.log*
 /android/app/src/main/res/values/strings.xml
 
 /public/firebase-messaging-sw.js
+/public/id_rsa
 
 /src/LoginApi/config.ts
 /src/Firebase/index.js
 /src/Config/socket.ts
+
 
 # END
 .eslintcache

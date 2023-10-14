@@ -51,7 +51,7 @@ class index extends Component<BoxMenuLatOtrosPropsType> {
                         onPress={() => {
                             SharedFunctions.compartir({
                                 text: `${this.props.datas?.descripcion}`,
-                                url: `${"https://calisteniabolivia.com/app/publicacion/post?pk=" + this.props.datas?.key}`,
+                                url: `${"https://TlleBo.servisofts.com/app/publicacion/post?pk=" + this.props.datas?.key}`,
                             });
                         }}
                     >

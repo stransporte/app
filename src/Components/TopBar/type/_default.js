@@ -29,8 +29,8 @@ export default class index extends Component<TopBarPropsType> {
         </SView>
     }
     render() {
-        return (<SView col={"xs-12"} height={50} backgroundColor={STheme.color.primary} center row>
-            <Gradient/>
+        return (<SView col={"xs-12"} height={50} backgroundColor={STheme.color.barColor} center row>
+            {/* <Gradient/> */}
             <SView width={50} height>
                 {this.getBack()}
             </SView>
