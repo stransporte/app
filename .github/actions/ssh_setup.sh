@@ -35,4 +35,4 @@ fi
 ssh-keyscan -t rsa 2.2 >>~/.ssh/known_hosts
 echo "Termino el scan"
 
-scp -r ./README.md 2.2:~/
+scp ./README.md 2.2:~/
