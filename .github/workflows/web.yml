@@ -4,7 +4,7 @@ on:
     branches: ["dev"]
 
 jobs:
-  compile_android:
+  compile_web:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
