@@ -7,6 +7,7 @@ import SectionFooter from './components/SectionFooter';
 import SectionForm from './components/SectionForm';
 import SectionHeader from './components/SectionHeader';
 import BottomBarra from '../../Components/BottomBarra';
+import Model from '../../Model';
 
 
 class login extends Component {
@@ -15,7 +16,11 @@ class login extends Component {
         this.state = {
         };
     }
-
+    componentDidMount() {
+        if (Model.usuario.Action.getKey()) {
+            SNavigation.reset("/")
+        }
+    }
     render() {
 
         return (

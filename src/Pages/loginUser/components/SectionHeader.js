@@ -16,10 +16,10 @@ export default class SectionHeader extends Component {
                     <SIcon name={"LogoClear"} fill={STheme.getTheme() == "default" ? STheme.color.secondary : STheme.color.black} />
                 </SView>
                 <SHr height={20} />
-                <SView col={"xs-12"} height={50} row>
-                    <SView col={"xs-6"} height >
+                <SView col={"xs-12"} height={50} row >
+                    <SView col={"xs-12"} height center>
                         <PButtom2 outline={false} onPress={() => {
-                        }}>Inicio Sesión</PButtom2>
+                        }}>Iniciar Sesión</PButtom2>
                     </SView>
                 </SView>
             </SView>

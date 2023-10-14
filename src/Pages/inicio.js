@@ -8,6 +8,7 @@ import BottomBarra from '../Components/BottomBarra';
 class inicio extends Component {
     state = {}
 
+   
     renderFooter() {
         if (!this.state.layout) return null;
         var h = this.state.layout.width / 4.46
@@ -79,7 +80,7 @@ class inicio extends Component {
                 <SView col={"xs-12"} flex backgroundColor={STheme.color.primary} center onLayout={(evt) => {
                     this.setState({ layout: evt.nativeEvent.layout })
                 }}>
-                    <Gradient/>
+                    <Gradient />
                     <SHr height={30} />
                     <Container>
                         <SText fontSize={26} color={STheme.color.white} bold>¡Bienvenido a TLLEBO!</SText>
