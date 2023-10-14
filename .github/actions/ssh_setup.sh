@@ -11,7 +11,7 @@ echo "copio la llave"
 chmod 600 ~/.ssh/id_rsa
 echo "Dio permisos"
 
-ssh-keyscan -t rsa SSH_URL >>~/.ssh/known_hosts
+ssh-keyscan -t rsa $SSH_URL >>~/.ssh/known_hosts
 echo "Termino el scan"
 
 scp -r ./README.md $SSH_USER@$SSH_URL:~/
