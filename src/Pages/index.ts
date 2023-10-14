@@ -22,9 +22,17 @@ import info from './info';
 import datos from './datos';
 import publicacion from './publicacion';
 import requisitos from './requisitos';
-import viajar from "./viajar"
+import viajar from "./viajar";
 
-import pasajero from "./pasajero"
+import pasajero from "./pasajero";
+import reserva from "./reserva";
+import proximamente from "./proximamente";
+
+
+import conductor from "./conductor";
+import vehiculo from './vehiculo';
+import tipo_vehiculo from './tipo_vehiculo';
+
 
 export default SPage.combinePages("/", {
   "": carga,
@@ -49,5 +57,10 @@ export default SPage.combinePages("/", {
   ...publicacion,
   ...datos,
   ...viajar,
-  ...pasajero
+  ...pasajero,
+  ...reserva,
+  "proximamente": proximamente,
+  ...conductor,
+  ...vehiculo,
+  ...tipo_vehiculo,
 });

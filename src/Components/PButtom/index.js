@@ -26,7 +26,7 @@ export default class PButtom extends Component<PButtom_props> {
         var colorText = STheme.color.white;
         if (this.props.withe) {
             bgColor = "#fff"
-            colorText = STheme.color.text;
+            colorText = STheme.color.black;
         }
         var size = {
             width: this.props.width ?? 350,

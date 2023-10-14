@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { SIcon, SNavigation, SText, STheme, SView } from 'servisofts-component';
+import { SGradient, SIcon, SNavigation, SText, STheme, SView } from 'servisofts-component';
 
 import { TopBarPropsType } from '..';
 import Model from '../../../../../Model';
+import { Gradient } from '../../../../../Components';
 export default class home extends Component<TopBarPropsType> {
     constructor(props) {
         super(props);
@@ -27,12 +28,13 @@ export default class home extends Component<TopBarPropsType> {
             }} col={"xs-12"} style={{
                 paddingBottom: 4,
             }} center height>
-                <SIcon height={18} name={"BackArrow"} fill={STheme.color.text} />
+                <SIcon height={18} name={"BackArrow"} fill={STheme.color.white} />
             </SView>
         </SView>
     }
     render() {
         return (<SView col={"xs-12"} height={50} backgroundColor={STheme.color.barColor} center row>
+             <Gradient/>
             <SView col={"xs-12"} row height >
                 <SView width={50}>
                     {this.getBack()}
@@ -48,7 +50,7 @@ export default class home extends Component<TopBarPropsType> {
                     <SView width={38} height={38} center onPress={() => {
                         SNavigation.navigate("/publicacion/add", { key: Model.usuario.Action.getKey() })
                     }}  >
-                        <SIcon fill={STheme.color.text} name='Camera3' width={23} height={23} stroke={0.5} />
+                        <SIcon fill={STheme.color.white} name='Camera3' width={23} height={23} stroke={0.5} />
                     </SView>
                 </SView>
 
