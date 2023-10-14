@@ -44,7 +44,7 @@ const theme: SThemeThemes = {
         card: "#88888822",
         accent: "#151813",
         mapStyle: MapStyle,
-        font: "OpenSans"
+        font: "OpenSans-Regular"
 
     },
     dark: {
@@ -58,7 +58,7 @@ const theme: SThemeThemes = {
         card: "#88888822",
         accent: "#151813",
         mapStyle: MapStyleDark,
-        font: "OpenSans"
+        font: "OpenSans-Regular"
     }
 }
 
