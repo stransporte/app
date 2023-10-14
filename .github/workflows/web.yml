@@ -19,22 +19,17 @@ jobs:
       - name: Set up SSH Key
         run: .github/actions/ssh_setup.sh
 
-      - name: Install rsync
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y rsync
+      # - name: Instalando el Node.js
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: 18.18.0
+      #     cache: "npm"
+      #     cache-dependency-path: package-lock.json
 
-      - name: Instalando el Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18.18.0
-          cache: "npm"
-          cache-dependency-path: package-lock.json
-
-      - run: npm ci
-      - run: ./bin/version
-      - run: npm run build
-      - name: Deploy with rsync
+      # - run: npm ci
+      # - run: ./bin/version
+      # - run: npm run build
+      - name: Copy build
         run: .github/actions/web_copy_build.sh
       - name: Clean files
         if: ${{ always() }}
