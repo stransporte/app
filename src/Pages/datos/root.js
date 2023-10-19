@@ -103,12 +103,12 @@ class index extends Component {
                 <SText color={STheme.color.success}>El usuario fue verificado en la fecha {fecha_on} por el administrador </SText>
                 <Link src={"/usuario/profile"} params={{ pk: key_usuario_admin }}>{key_usuario_admin}</Link>
                 <SHr />
-                <SText bold>Observacion: {observacion}</SText>
+                <SText bold>Observación: {observacion}</SText>
                 <SHr />
 
                 <Link onPress={() => {
                     SPopup.confirm({
-                        title: "Seguro que quieres quitar la verificacion al usuario?",
+                        title: "¿Seguro que quieres quitar la verificación al usuario?",
                         onPress: async () => {
 
                             SSocket.sendPromise({
@@ -125,7 +125,7 @@ class index extends Component {
                                 })
                             }).catch(e => {
                                 SNotification.send({
-                                    title: "Error al quitar la verificacion del usuario.",
+                                    title: "Error al quitar la verificación del usuario.",
                                     body: e?.error,
                                     color: STheme.color.danger,
                                     time: 5000,
@@ -133,7 +133,7 @@ class index extends Component {
                             })
                         }
                     })
-                }} color={STheme.color.danger}>{"Quitar verificacion"}</Link>
+                }} color={STheme.color.danger}>{"Quitar verificación"}</Link>
                 {/* <SText>Observacion: {observacion}</SText> */}
             </SView>
         }
@@ -141,20 +141,20 @@ class index extends Component {
             <SHr h={1} color={STheme.color.gray} />
             <SHr />
             <SText bold>HABILITA AL CONDUCTOR</SText>
-            <SText fontSize={12} color={STheme.color.warning} >Una vez tengas los documentos verificados, puedes habiltar al conductor para que pueda iniciar sus viajes.</SText>
+            <SText fontSize={12} color={STheme.color.warning} >Una vez tengas los documentos verificados, puedes habilitar al conductor para que pueda iniciar sus viajes.</SText>
             <SHr />
             <SInput
                 ref={ref => this.obsinput = ref}
                 type='textArea'
-                placeholder={"Escribe aqui la observacion"}
+                placeholder={"Escribe aquí la observación"}
             />
             <SHr />
             <Link onPress={() => {
                 const obs = this.obsinput.getValue();
                 if (!obs) {
                     SNotification.send({
-                        title: "Verificacion de usuario",
-                        body: "La observacion no puede ser vacia.",
+                        title: "Verificación de usuario",
+                        body: "La observación no puede ser vacía.",
                         color: STheme.color.danger,
                         time: 5000,
                     })
