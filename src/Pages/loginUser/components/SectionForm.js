@@ -1,8 +1,10 @@
 
 import React, { Component } from 'react';
 import { SForm, SHr, SIcon, SNavigation, SPopup, SText, SView } from 'servisofts-component';
-import Model from '../../../Model';
+// import Model from '../../../Model';
+import { Parent } from '../../../';
 import CryptoJS from 'crypto-js';
+import Model from '../../../Model';
 
 export default class SectionForm extends Component {
     constructor(props) {
@@ -61,6 +63,21 @@ export default class SectionForm extends Component {
                         if (data) {
                             data["telefono"] = data["telefono"];
                             console.log(data)
+                            Model.cliente.Action.registro({
+
+                            // Parent.model.Action.registro({
+                                data: data,
+                                key_usuario: Model.usuario.Action.getKey()
+                            }).then((resp) => {
+                                // this.$submitFile(resp.data.key);
+                                // SNavigation.goBack();
+                                console.log("respuesta")
+                                console.log(resp)
+                                SNavigation.replace("/pasajero", { telefono: data.telefono })
+                            }).catch(e => {
+                                console.error(e);
+                    
+                            })
                             // Model.usuario.Action.loginByKey(data).then((resp) => {
                             //     if (resp.data.estado == "0") {
                             //         SPopup.alert("Usuario eliminado");
@@ -76,7 +93,7 @@ export default class SectionForm extends Component {
                             // }).catch((e) => {
                             //     this.setState({ loading: false, error: "Usuario o contraseña incorrectos." })
                             // })
-                            SNavigation.replace("/pasajero", { telefono: data.telefono })
+                          
                         }
                     }}
                 />

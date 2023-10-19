@@ -3,8 +3,6 @@ import DPA, { connect } from 'servisofts-page';
 import { Parent } from "."
 import Model from '../../Model';
 import item from './item';
-import { TipoVehiculo } from '../../Components';
-import { SHr, SView } from 'servisofts-component';
 
 class index extends DPA.profile {
     constructor(props) {
@@ -26,17 +24,6 @@ class index extends DPA.profile {
     }
     $getData() {
         return Parent.model.Action.getByKey(this.pk);
-    }
-    $footer() {
-        console.log(this.data)
-        console.log("kkk")
-        if(this.data)
-        return <SView col={"xs-12"}>
-            <SHr height={16} />
-            <TipoVehiculo.Tipo width={this.data.w} height={this.data.h} data={this.data}
-                titulo="prueba"
-                icon="Clientes" />
-        </SView>
     }
 }
 export default connect(index);

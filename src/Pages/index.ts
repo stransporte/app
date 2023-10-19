@@ -32,6 +32,7 @@ import proximamente from "./proximamente";
 import conductor from "./conductor";
 import vehiculo from './vehiculo';
 import tipo_vehiculo from './tipo_vehiculo';
+import cliente from './cliente';
 
 import version_required from './version_required';
 import notification_manager from './notification_manager';
@@ -64,6 +65,7 @@ export default SPage.combinePages("/", {
   ...conductor,
   ...vehiculo,
   ...tipo_vehiculo,
+  ...cliente,
   version_required,
   notification_manager
 });
