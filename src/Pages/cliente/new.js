@@ -13,6 +13,8 @@ class index extends DPA.new {
         this.state = {}
     }
 
+    
+
     $allowAccess() {
         return Model.usuarioPage.Action.getPermiso({ url: Parent.path, permiso: "new" })
     }
@@ -28,19 +30,24 @@ class index extends DPA.new {
     $inputs() {
         var inp = super.$inputs();
         inp["observacion"].type = "textArea"
-        inp["monto"].type = "money"
+        // inp["monto"].type = "money"
 
-        inp["direccion_ini"].value = this.state["ini"]?.direccion;
-        inp["latitude_ini"].value = this.state["ini"]?.latitude;
-        inp["longitude_ini"].value = this.state["ini"]?.longitude;
-        inp["latitude_ini"].onPress = this.handleSelect.bind(this, "ini")
-        inp["longitude_ini"].onPress = this.handleSelect.bind(this, "ini")
+        // "key_usuario": { type: "text", fk: "usuario" },
+        // "descripcion": { type: "text", editable: true },
+        // "observacion": { type: "text", editable: true },
+        // "telefono": { type: "text", editable: true },
 
-        inp["direccion_fin"].value = this.state["fin"]?.direccion;
-        inp["latitude_fin"].value = this.state["fin"]?.latitude;
-        inp["longitude_fin"].value = this.state["fin"]?.longitude;
-        inp["latitude_fin"].onPress = this.handleSelect.bind(this, "fin")
-        inp["longitude_fin"].onPress = this.handleSelect.bind(this, "fin")
+        //  inp["descripcion"].type = this.state["key_usuario"]?.direccion;
+        // inp["latitude_ini"].value = this.state["ini"]?.latitude;
+        // inp["longitude_ini"].value = this.state["ini"]?.longitude;
+        // inp["latitude_ini"].onPress = this.handleSelect.bind(this, "ini")
+        // inp["longitude_ini"].onPress = this.handleSelect.bind(this, "ini")
+
+        // inp["direccion_fin"].value = this.state["fin"]?.direccion;
+        // inp["latitude_fin"].value = this.state["fin"]?.latitude;
+        // inp["longitude_fin"].value = this.state["fin"]?.longitude;
+        // inp["latitude_fin"].onPress = this.handleSelect.bind(this, "fin")
+        // inp["longitude_fin"].onPress = this.handleSelect.bind(this, "fin")
 
         return inp;
     }
