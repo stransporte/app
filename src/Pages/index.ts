@@ -35,6 +35,7 @@ import tipo_vehiculo from './tipo_vehiculo';
 
 import version_required from './version_required';
 import notification_manager from './notification_manager';
+import test from './test';
 export default SPage.combinePages("/", {
   "": carga,
   "root": root,
@@ -64,6 +65,7 @@ export default SPage.combinePages("/", {
   ...conductor,
   ...vehiculo,
   ...tipo_vehiculo,
+  test,
   version_required,
   notification_manager
 });
