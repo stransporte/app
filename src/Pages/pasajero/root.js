@@ -9,6 +9,7 @@ class root extends Component {
         super(props);
         this.state = {
         };
+        this.pk = SNavigation.getParam("telefono");
     }
 
     cardOpciones(title, subtitle, image, root ) {
@@ -35,7 +36,7 @@ class root extends Component {
                     <Container>
                         <SHr height={16} />
                         <SView card col={"xs-12"} center height={65}>
-                            <SText fontSize={25} bold color={STheme.color.text}>+591 75264852</SText>
+                            <SText fontSize={25} bold color={STheme.color.text}>{this.pk}</SText>
                         </SView>
                         <SHr height={16} />
                         {this.cardOpciones("Comprar pasaje", "Reserva tu asiento y viaja de manera segura y barata.", require('../../Assets/img/pasaje.png'), "/pasajero/rutas")}

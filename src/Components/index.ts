@@ -20,6 +20,7 @@ import Usuario from "./Usuario"
 import Visitas from "./Visitas"
 import Gradient from "./Gradient"
 import Link from "./Link"
+import TipoVehiculo from "./TipoVehiculo"
 export {
     TopBar,
     NavBar,
@@ -42,5 +43,6 @@ export {
     Btn,
     Visitas,
     Gradient,
-    Link
+    Link,
+    TipoVehiculo
 }

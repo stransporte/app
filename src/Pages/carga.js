@@ -28,10 +28,11 @@ class index extends Component {
             if (Model.usuario.Action.getKey()) {
                 SNavigation.replace("/root")
             } else {
-                // SNavigation.replace("/login")
+                SNavigation.replace("/login")
                 SNavigation.replace("/publicacion")
             }
         })
+
         SSocket.sendPromise({
             component: "enviroments",
             type: "getVersion",
