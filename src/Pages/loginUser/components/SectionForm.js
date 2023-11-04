@@ -64,9 +64,9 @@ export default class SectionForm extends Component {
                             data["telefono"] = data["telefono"];
                             console.log(data)
 
-                            let dataa = Model.cliente.Action.getByKey(data["telefono"]);
-                            console.log("dataa")
-                            console.log(dataa)
+                            // let dataa = Model.cliente.Action.getByKey(data["telefono"]);
+                            // console.log("dataa")
+                            // console.log(dataa)
 
                             // Model.cliente.Action.getByKey(data["telefono"]).then((resp) => {
                             //     console.log("respuesta")
@@ -98,12 +98,13 @@ export default class SectionForm extends Component {
                                 //     key: resp.data.key,
 
                                 // })
-                                Model.cliente.Action.setCliente(resp.data.key);
+                                
                                 SNavigation.replace("/pasajero", { telefono: data.telefono })
                             }).catch(e => {
                                 console.error(e);
                             })
 
+                            Model.cliente.Action.setCliente(data.telefono);
                             // Model.cliente.Action.loginByKey(data).then((resp) => {
                             //     if (resp.data.estado == "0") {
                             //         SPopup.alert("Usuario eliminado");

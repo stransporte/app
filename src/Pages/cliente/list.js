@@ -12,6 +12,8 @@ class index extends DPA.list {
             title: "Lista de " + Parent.name,
             // item: item,
             //excludes: ['usest','iniciales','modpreven','idcentro','suctod','usultsuc','verval','selcob','autcred','pcpred','facauto','uimpr'],
+            excludes: ["fecha_edit", "estado", "key_usuario"],
+
             onRefresh: (resolve) => {
                 Parent.model.Action.CLEAR();
                 resolve();

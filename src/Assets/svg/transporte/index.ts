@@ -12,6 +12,8 @@ import MascaraTrufi, { ReactComponent as MascaraTrufiW } from '../transporte/mas
 import AdmDocumentos, { ReactComponent as AdmDocumentosW } from '../transporte/admDocumentos.svg';
 import AdmPublicaciones, { ReactComponent as AdmPublicacionesW } from '../transporte/admPublicaciones.svg';
 import AdmViajar, { ReactComponent as AdmViajarW } from '../transporte/admViajar.svg';
+import Tricard, { ReactComponent as TricardW } from '../transporte/tricard.svg';
+import MarcadorMapa, { ReactComponent as MarcadorMapaW } from '../transporte/marcadorMapa.svg';
 
 
 const Assets = {
@@ -29,6 +31,8 @@ const Assets = {
 	"AdmDocumentos": { Native: AdmDocumentos, Web: AdmDocumentosW },
 	"AdmPublicaciones": { Native: AdmPublicaciones, Web: AdmPublicacionesW },
 	"AdmViajar": { Native: AdmViajar, Web: AdmViajarW },
+	"Tricard": { Native: Tricard, Web: TricardW },
+	"MarcadorMapa": { Native: MarcadorMapa, Web: MarcadorMapaW },
 	
 	
 
