@@ -20,7 +20,7 @@ export default class index extends Component<Tipo_props> {
         return (
             <SView col={"xs-12"}>
                 <SView col={"xs-12"}/>
-                <SView width={(this.props.width) ? this.props?.width : 120} height={this.props.height} row center card
+                <SView width={(this.props.width) ? this.props?.width : 120} height={this.props.height} row center
                     style={{
                         borderRadius: 10,
                     }}>
