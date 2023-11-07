@@ -18,23 +18,28 @@ class index extends Component {
             }
         };
         // this.idcli = Model.tbcli.Action.getCliente()?.idcli
-        this.idven = SNavigation.getParam("pk");
+        this.idruta = SNavigation.getParam("pk");
     }
 
-    // componentDidMount() {
-    //     SSocket.sendPromise({
-    //         component: "tbven",
-    //         type: "getConductor",
-    //         idven: this.idven,
-    //     }).then(e => {
-    //         console.log(e);
-    //         this.setState({ data: e.data[0] })
-    //     }).catch(e => {
-    //         console.error(e);
-    //     })
-    //     this.isRun = true;
-    //     this.hilo();
-    // }
+
+
+
+
+
+    componentDidMount() {
+        SSocket.sendPromise({
+            component: "ruta",
+            type: "getByKey",
+            key: this.idruta,
+        }).then(e => {
+            console.log(e);
+            this.setState({ data: e.data[this.idruta] })
+        }).catch(e => {
+            console.error(e);
+        })
+        this.isRun = true;
+        this.hilo();
+    }
 
     // componentWillUnmount() {
     //     this.isRun = false;
@@ -63,6 +68,8 @@ class index extends Component {
     showMapa() {
 
         // if (!this.state.data) return null;
+        console.log(parseFloat(this.state.data?.latitude_ini))
+        console.log(this.state.data?.longitude_ini)
         return <SView col={"xs-12"} flex center >
             <SMapView
                 initialRegion={{
@@ -78,12 +85,16 @@ class index extends Component {
                     lng={this.props.data?.restaurante?.longitude}
                     latitude={this.props.data?.restaurante?.latitude}
                     longitude={this.props.data?.restaurante?.longitude} />  */}
-                {/* <SMarker lat={this.state.data?.vlatitud} lng={this.state.data?.vlongitud} >
+                <SMarker lat={parseFloat(this.state.data?.latitude_ini)} lng={parseFloat(this.state.data?.longitude_ini)} >
                     <SIcon name={"MarcadorMapa"} width={40} height={40} fill={"#FA790E"} />
-                </SMarker> */}
-                {!this.state.posicion_conductor ? null : <SMapView.SMarker width={50} height={50} latitude={this.state.posicion_conductor?.latitude} longitude={this.state?.posicion_conductor?.longitude} >
-                    <SIcon name={"Marker"} width={50} height={50} fill={STheme.color.primary} />
-                </SMapView.SMarker>}
+                </SMarker>
+                {/* {!this.state.posicion_conductor ? null : <SMapView.SMarker width={50} height={50} latitude={this.state.posicion_conductor?.latitude} longitude={this.state?.posicion_conductor?.longitude} >
+                    <SIcon name={"MarcadorMapa"} width={50} height={50} fill={STheme.color.primary} />
+                </SMapView.SMarker>} */}
+                {/* -17.334849, -63.259922 */}
+                <SMapView.SMarker width={50} height={50} latitude={(this.state.data?.latitude_fin)} longitude={(this.state.data?.longitude_fin)} >
+                    <SIcon name={"MarcadorMapa"} width={50} height={50} fill={STheme.color.primary} />
+                </SMapView.SMarker>
             </SMapView>
         </SView>
     }
@@ -92,12 +103,16 @@ class index extends Component {
         return <SView height={200} style={{ backgroundColor: STheme.color.primary, borderTopLeftRadius: 16, borderTopRightRadius: 16 , overflow:"hidden"}}>
             <Gradient style={{overflow: 'hidden'}}/>
             {/* <Pedido.BotonesEstado data={this.props.data} posicion_conductor={this.state?.posicion_conductor} /> */}
+            
+            
             <Pasajero.BotonesEstado data={this.state.data} />
         </SView>
     }
 
 
     render() {
+        console.log("this.state.data")
+        console.log(this.state.data)
         // this.users = Model.usuario.Action.getAll();
         // if (!this.users) return <SLoad />
 

@@ -11,7 +11,7 @@ class index extends Component {
         this.state = {
             // idemp: "",
         };
-        this.state.idemp = SNavigation.getParam("idemp")
+        this.idruta = SNavigation.getParam("pk")
     }
 
     recibirItems = ({ tbprd }) => {
@@ -43,7 +43,7 @@ class index extends Component {
                     <SView col={"xs-10"} border={'transparent'} center>
                         <SHr height={20} />
                         <PButtom fontSize={16} width={"100%"} height={50} bold withe center onPress={() => {
-                            SNavigation.navigate("/pasajero/mapa_reserva", { idemp: this.state.idemp })
+                            SNavigation.navigate("/pasajero/mapa_reserva", { pk: this.idruta })
                         }} >VER PARADAS EN MAPA</PButtom>
                     </SView>
                     <SHr height={30} />

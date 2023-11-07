@@ -56,7 +56,7 @@ class rutas extends Component {
             data={this.state.data}
             render={(data) => {
                 return <SView col={"xs-12"} card padding={10} row
-                    onPress={() => { SNavigation.navigate("/pasajero/aviso_reserva") }}>
+                    onPress={() => { SNavigation.navigate("/pasajero/aviso_reserva", {pk : data.key}) }}>
                     <SText fontSize={20} bold>{data.descripcion}</SText>
                     <SHr />
                     <SText fontSize={14} color={STheme.color.darkGray} >Tiempo estimado, 50 minutos.</SText>
