@@ -22,7 +22,6 @@ export default class index extends Component<Tipo_props> {
                 <SView col={"xs-12"}/>
                 <SView width={(this.props.width) ? this.props?.width : 120} height={this.props.height} row center card
                     style={{
-                        padding: 5,
                         borderRadius: 10,
                     }}>
                     <SImage src={SSocket.api.root + "tipo_vehiculo/" + this.props?.data.key} style={{

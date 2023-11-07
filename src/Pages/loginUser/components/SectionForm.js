@@ -92,19 +92,22 @@ export default class SectionForm extends Component {
                             }).then((resp) => {
                                 console.log("respuesta")
                                 console.log(resp)
+                                if (resp.estado != "exito") return;
+                                Model.cliente.Action.setCliente(data.telefono);
                                 // Model.cliente.Action._dispatch({
                                 //     component: "cliente",
                                 //     type: "onRegistro",
                                 //     key: resp.data.key,
 
                                 // })
-                                
+
                                 SNavigation.replace("/pasajero", { telefono: data.telefono })
                             }).catch(e => {
+                                SPopup.alert("Error al registrar");
                                 console.error(e);
                             })
 
-                            Model.cliente.Action.setCliente(data.telefono);
+
                             // Model.cliente.Action.loginByKey(data).then((resp) => {
                             //     if (resp.data.estado == "0") {
                             //         SPopup.alert("Usuario eliminado");
