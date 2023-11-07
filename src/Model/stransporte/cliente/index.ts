@@ -11,10 +11,10 @@ export default new SModel<Action, Reducer>({
         "fecha_on": { type: "timestamp", },
         "fecha_edit": { type: "timestamp", },
         "estado": { type: "integer", },
-        "key_usuario": { type: "text", fk: "usuario" },
+        // "key_usuario": { type: "text", fk: "usuario" },
         "descripcion": { type: "text", editable: true },
         "observacion": { type: "text", editable: true },
-        "telefono": { type: "text", editable: true },
+        // "telefono": { type: "text", editable: true },
     },
     image: {
         api: "root",
