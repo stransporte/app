@@ -18,6 +18,7 @@ import mapa from './mapa';
 import reportes from './reportes';
 
 import ruta from './ruta';
+import parada from './parada';
 import info from './info';
 import datos from './datos';
 import publicacion from './publicacion';
@@ -57,6 +58,7 @@ export default SPage.combinePages("/", {
   ...reportes,
   ...info,
   ...ruta,
+  ...parada,
   ...publicacion,
   ...datos,
   ...viajar,

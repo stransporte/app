@@ -15,7 +15,7 @@ class index extends DPA.item {
         return <SView col={"xs-12"} row>
             {this.buildLabel({ label: "Id", value: this.data?.key })}
             {this.buildLabel({ label: "Descripción", value: this.data?.descripcion })}
-            {this.buildLabel({ label: "Monto", value: this.data?.monto })}
+            {this.buildLabel({ label: "Dirección", value: this.data?.direccion })}
       
             <SView col={"xs-12"}  style={{alignItems: "flex-end"}}>
                 <SText fontSize={10} color={STheme.color.gray}>{this.data?.fecha_ont}</SText>

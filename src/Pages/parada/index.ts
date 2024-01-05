@@ -8,10 +8,11 @@ import edit from './edit';
 import profile from './profile';
 import _new from "./new"
 export const Parent = {
-    name: "ruta",
-    path: `/ruta`,
-    model: Model.ruta,
-    
+    name: "parada",
+    path: `/parada`,
+    model: Model.parada,
+    // type: "describe",
+    //type describe
 }
 export default SPage.combinePages(Parent.name, {
     "": list,

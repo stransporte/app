@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SGradient, SHr, SIcon, SNavigation, SPage, SText, STheme, SThread, SView } from 'servisofts-component';
+import { SGradient, SHr, SIcon, SImage, SNavigation, SPage, SText, STheme, SThread, SView } from 'servisofts-component';
 import Model from '../Model';
 import { Container, Gradient } from '../Components';
 import BottomBarra from '../Components/BottomBarra';
@@ -77,10 +77,29 @@ class inicio extends Component {
     render() {
         return (
             <SPage hidden disableScroll center footer={<BottomBarra url={"/login"} />}>
+                <SView 
+                // style={{
+                //     position: "absolute",
+                //     width: "100%",
+                //     height: "100%",
+                //     borderRadius: 100,
+                //     overflow: "hidden",
+                // }}
+                col={"xs-12"} flex center
+                >
+                    
+              
                 <SView col={"xs-12"} flex backgroundColor={STheme.color.primary} center onLayout={(evt) => {
                     this.setState({ layout: evt.nativeEvent.layout })
                 }}>
                     <Gradient />
+                    <SImage src={require('../Assets/img/backsground2.png')} style={{
+                        width: "100%",
+                        height: "100%",
+                        resizeMode: "cover",
+                        position: "absolute",
+                        opacity: 0.6
+                    }} />
                     <SHr height={30} />
                     <Container>
                         <SText fontSize={26} color={STheme.color.white} bold>¡Bienvenido a TLLEBO!</SText>
@@ -94,6 +113,7 @@ class inicio extends Component {
                         {this.targetConductor()}
                         <SHr height={15} />
                     </Container>
+                </SView>
                 </SView>
             </SPage>
         );
