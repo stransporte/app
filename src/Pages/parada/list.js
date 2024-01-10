@@ -18,6 +18,9 @@ class index extends DPA.list {
                 resolve();
             }
         });
+        this.state = {
+            pk: SNavigation.getParam("pk")
+        }
     }
     $allowNew() {
         return Model.usuarioPage.Action.getPermiso({ url: Parent.path, permiso: "new" });
@@ -25,7 +28,7 @@ class index extends DPA.list {
 
     onNew() {
         SNavigation.navigate("/parada/new", {
-            key_ruta: this.props.route.params.key_ruta
+            pk: this.state.pk
             
         });
     }
@@ -37,9 +40,9 @@ class index extends DPA.list {
     }
     $filter(data) {
         console.log(data)
-        console.log(this.props.route.params.key_ruta)
+        console.log(this.state.pk + "-kkk")
         // return data.estado != "0" 
-        return data.estado != "0" && data.key_ruta == this.props.route.params.key_ruta
+        return data.estado != "0" && data.key_ruta == this.state.pk
     }
     $getData() {
         return Parent.model.Action.getAll();

@@ -14,6 +14,7 @@ import AdmPublicaciones, { ReactComponent as AdmPublicacionesW } from '../transp
 import AdmViajar, { ReactComponent as AdmViajarW } from '../transporte/admViajar.svg';
 import Tricard, { ReactComponent as TricardW } from '../transporte/tricard.svg';
 import MarcadorMapa, { ReactComponent as MarcadorMapaW } from '../transporte/marcadorMapa.svg';
+import Parada, { ReactComponent as ParadaW } from '../transporte/parada.svg';
 
 
 const Assets = {
@@ -33,6 +34,7 @@ const Assets = {
 	"AdmViajar": { Native: AdmViajar, Web: AdmViajarW },
 	"Tricard": { Native: Tricard, Web: TricardW },
 	"MarcadorMapa": { Native: MarcadorMapa, Web: MarcadorMapaW },
+	"Parada": { Native: Parada, Web: ParadaW },
 	
 	
 

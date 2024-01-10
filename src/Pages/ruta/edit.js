@@ -17,14 +17,37 @@ class index extends DPA.edit {
     $getData() {
         return Parent.model.Action.getByKey(this.pk);
     }
-    // $inputs() {
-    //     var inp = super.$inputs();
-    //     // inp["idlinea"].label = "Id"
-    //     inp["linnom"].label = "Nombre"
-    //     inp["linniv"].label = "Nivel"
-    //     inp["lincod"].label = "Código"
-    //     return inp;
-    // }
+    handleSelect(key) {
+        SNavigation.navigate("/mapa/select", {
+            onSelect: (latlng) => {
+
+                this.state[key] = latlng
+                this.setState({ ...this.state })
+            }
+        })
+    }
+    $inputs() {
+        var inp = super.$inputs();
+        inp["observacion"].type = "textArea"
+        inp["monto"].type = "money"
+
+        inp["direccion_ini"].value = this.state["ini"]?.direccion;
+        inp["latitude_ini"].value = this.state["ini"]?.latitude;
+        inp["longitude_ini"].value = this.state["ini"]?.longitude;
+        inp["latitude_ini"].onPress = this.handleSelect.bind(this, "ini")
+        inp["longitude_ini"].onPress = this.handleSelect.bind(this, "ini")
+
+        inp["direccion_fin"].value = this.state["fin"]?.direccion;
+        inp["latitude_fin"].value = this.state["fin"]?.latitude;
+        inp["longitude_fin"].value = this.state["fin"]?.longitude;
+        inp["latitude_fin"].onPress = this.handleSelect.bind(this, "fin")
+        inp["longitude_fin"].onPress = this.handleSelect.bind(this, "fin")
+        
+        // inp["linnom"].label = "Nombre"
+        // inp["linniv"].label = "Nivel"
+        // inp["lincod"].label = "Código"
+        return inp;
+    }
     
     $onSubmit(data) {
         Parent.model.Action.editar({
@@ -37,7 +60,6 @@ class index extends DPA.edit {
             SNavigation.goBack();
         }).catch(e => {
             console.error(e);
-
         })
     }
 }

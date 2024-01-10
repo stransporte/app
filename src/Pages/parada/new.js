@@ -10,7 +10,9 @@ class index extends DPA.new {
             Parent: Parent,
             excludes: ["key", "fecha_on", "fecha_edit", "estado", "key_usuario", "key_usuario_edit", "key_ruta"]
         });
-        this.state = {}
+        this.state = {
+            pk: SNavigation.getParam("pk")
+        }
     }
 
     $allowAccess() {
@@ -35,13 +37,14 @@ class index extends DPA.new {
         inp["latitude"].onPress = this.handleSelect.bind(this, "ini")
         inp["longitude"].onPress = this.handleSelect.bind(this, "ini")
 
-       
+
         return inp;
     }
     $onSubmit(data) {
+        data.key_ruta = this.state.pk;
         Parent.model.Action.registro({
             data: data,
-            key_ruta: this.props.route.params.key_ruta,
+            // key_ruta: this.state.pk,
             key_usuario: Model.usuario.Action.getKey()
         }).then((resp) => {
             this.$submitFile(resp.data.key);
@@ -53,8 +56,8 @@ class index extends DPA.new {
     }
     $footer() {
         return <SView col={"xs-12"}>
-           <SText>{this.props.route.params.key_ruta}</SText>
-            </SView>
+            <SText>{this.state.pk}</SText>
+        </SView>
     }
 }
 

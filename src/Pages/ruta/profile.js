@@ -3,7 +3,8 @@ import DPA, { connect } from 'servisofts-page';
 import { Parent } from "."
 import Model from '../../Model';
 import item from './item';
-import { SHr, SImage, SNavigation, SText, SView } from 'servisofts-component';
+import { SHr, SIcon, SImage, SNavigation, SText, SView } from 'servisofts-component';
+import { MenuButtom, MenuPages } from 'servisofts-rn-roles_permisos';
 
 class index extends DPA.profile {
     constructor(props) {
@@ -42,7 +43,7 @@ class index extends DPA.profile {
         // </SView>
         return <SView col={"xs-12"}>
             <SHr height={20} />
-            <SView col={"xs-12"} onPress={() => {
+            {/* <SView col={"xs-12"} onPress={() => {
                 SNavigation.navigate("/parada", { key_ruta: this.pk })
             }} >
                 <SView width={30} height={50} center>
@@ -50,7 +51,14 @@ class index extends DPA.profile {
                 height: "100%",}} />
                 </SView>
                 <SText>Paradas</SText>
-            </SView>
+            </SView> */}
+
+            <MenuPages path={Parent.path + "/profile/"} permiso={"view"} params={{
+                pk: this.pk
+            }} >
+                <MenuButtom url={"/parada"} params={{ pk: this.pk }}
+                    icon={<SIcon name={"Parada"} />}  label={"Parada"}  />
+            </MenuPages>
         </SView>
     }
 }
